@@ -23,11 +23,12 @@ public class Steps
 
 	public void findTickets()
 	{
-		HomePage loginPage = new HomePage(driver);
-		loginPage.openPage();
-		loginPage.enterLocations();
-		loginPage.enterDates();
-		loginPage.clickFind();
+		HomePage homePage = new HomePage(driver);
+		homePage.openPage();
+		homePage.enterLocations();
+		homePage.enterDates();
+		homePage.clickFind();
+		homePage.clickCalendar();
 	}
 
 	/*public boolean isLoggedIn(String username)

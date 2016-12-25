@@ -3,6 +3,7 @@ package by.htp.mandrik.pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,11 @@ public class HomePage extends AbstractPage{
 	}
 
 	public void enterLocations(){
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace(); 
+		}
 		buttonFind1.click();
 		
 		String jS1 = "var s= document.getElementById('OriginLocation_Combobox');s.type = 'visible';s.value = 'MSQ';";
@@ -60,6 +66,15 @@ public class HomePage extends AbstractPage{
 	public void clickFind(){
 		buttonFind.click();
 		logger.info("Find is clicked");
+	}
+	
+	public void clickCalendar(){
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace(); 
+		}
+		driver.findElement(By.xpath("//*[@id='outbound']/div[1]/div/div[2]/a")).click();
 	}
 
 	@Override
